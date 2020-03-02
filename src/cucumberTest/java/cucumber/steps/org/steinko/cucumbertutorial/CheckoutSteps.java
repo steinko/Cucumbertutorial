@@ -21,9 +21,10 @@ public class CheckoutSteps {
 	    checkout.add(itemCount,bananaPrice);
 	}
 
-	@Then("the total price should be {int}c")
+	@Then("the total price should be {int}")
 	public void theTotalPriceShouldBeC(Integer total) {
 	   assertEquals(total,checkout.total());
 
 	}
+	
 }
