@@ -1,4 +1,4 @@
  language: java
  jdk: openjdk13
  install: gradle assemble
- script: gradle check
+ script:  gradle clean  cucumberTest
