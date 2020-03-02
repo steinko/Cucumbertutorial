@@ -1,0 +1,27 @@
+ plugins {  
+    id 'java'
+    id 'com.patdouble.cucumber-jvm' version '0.19'
+}
+
+repositories {
+    jcenter()
+}
+
+addCucumberSuite 'cucumberTest'
+
+cucumber {
+    maxParallelForks = 3
+    plugins  ['progress']
+}
+
+cucumberTest {
+    stepDefinitionRoots = ['cucumber.steps','org.steinko.cucumbertutorial'] 
+    
+}
+
+dependencies {
+     cucumberTestImplementation 'io.cucumber:cucumber-java:4.8.0'
+    // To use JUnit assertions in the step definitions:
+    cucumberTestImplementation 'junit:junit:4.12'
+}
+
