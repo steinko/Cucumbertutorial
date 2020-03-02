@@ -19,9 +19,15 @@ cucumberTest {
     
 }
 
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
-     cucumberTestImplementation 'io.cucumber:cucumber-java:4.8.0'
-    // To use JUnit assertions in the step definitions:
-    cucumberTestImplementation 'junit:junit:4.12'
+    cucumberTestImplementation 'io.cucumber:cucumber-java:4.8.0'
+    cucumberTestImplementation 'junit:junit:4.13'
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.0")
 }
 
