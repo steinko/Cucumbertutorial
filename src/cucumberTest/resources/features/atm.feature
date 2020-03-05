@@ -10,7 +10,7 @@ Feature: Feedback when entering invalid credit card details
     And I am about to enter my credit card details
 
   Scenario: Credit card number too short
-    Given  I enter a card number "416985000106406"
+    Given  I enter a card number 416985000106406
     And Valid To 02/23
     And CVC 074
     When I submit the form

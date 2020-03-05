@@ -23,13 +23,15 @@ public class ATMSteps {
 
 	@Given("I am about to enter my credit card details")
 	public void iAmAboutToEnterMyCreditCardDetails() {
-	    
+		creditCard = new CreditCard();
+	}
+	
+	@Given("I enter a card number {long}")
+	public void iEnterACardNumber(Long creditCardNumber) {
+	   this.creditCardNumber = creditCardNumber;
 	}
 
-	@Given("I enter a card number {string}")
-	public void iEnterACardNumber(String cardNumber) {
-		creditCardNumber = Long.parseLong(cardNumber);
-	}
+	
 
 	@Given("Valid To {int}\\/{int}")
 	public void validTo(Integer month, Integer year) {
@@ -44,8 +46,7 @@ public class ATMSteps {
 	
 	@When("I submit the form")
 	public void iSubmitTheForm() {
-		message = "Please enter a 16 digits credit car number" ;
-				//creditCard.validate(creditCardNumber,validMonth,validYear,aCvc);
+		message = creditCard.validate(creditCardNumber,validMonth,validYear,aCvc);
 	}
 	
 	@Then("the form should be redisplayed")
