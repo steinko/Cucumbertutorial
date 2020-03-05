@@ -26,4 +26,26 @@ public class WithdrawCashSteps {
 	}
 	
 
+	
+	@Given("I have $80 in my account")
+	public void iHave$InMyAccount(Integer int1) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	
+	
+	@Given("I have $\\({int}) in my account")
+	public void iHave$InMyAccount(int amount) {
+		 assertEquals(amount,account.total());
+	}
+
+	@When("I request $\\({int})")
+	public void iRequest$(Integer amount) {
+		account.withdraw(amount);
+	}
+
+	@Then("$\\({int}) should be dispensed")
+	public void $ShouldBeDispensed(Integer int1) {
+	    
+	}
 }

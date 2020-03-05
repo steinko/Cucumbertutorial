@@ -1,4 +1,4 @@
-package org.steinko.cucumbertotal;
+package org.steinko.cucumbertutorial;
 
 import org.steinko.cucumbertutorial.CreditCard;
 import static org.junit.jupiter.api.Assertions.assertEquals;

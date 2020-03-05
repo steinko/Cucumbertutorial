@@ -1,4 +1,4 @@
-package org.steinko.cucumbertotal;
+package org.steinko.cucumbertutorial;
 
 import org.steinko.cucumbertutorial.Account;
 import org.junit.jupiter.api.Test;
