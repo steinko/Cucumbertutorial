@@ -22,5 +22,13 @@ public class CreditCardTest {
 		assertEquals(message,expected);
 	}
 	
+	@Test
+	void shouldReturnMessage() {
+		CreditCard creditCard = new CreditCard();
+		String message =  creditCard.validate(4169850001064061L, 02, 19, 074);
+		String expected = "Credit Card Expired";
+		assertEquals(message,expected);
+	}
+	
 
 }

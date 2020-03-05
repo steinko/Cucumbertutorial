@@ -16,3 +16,11 @@ Feature: Feedback when entering invalid credit card details
     When I submit the form
     Then the form should be redisplayed
     And I should see a message  "Please enter a 16 digits credit car number"  
+    
+  Scenario: Expiry date must not be in the past
+    Given  I enter a card number 4169850001064067
+    And Valid To 02/19
+    And CVC 074
+    When I submit the form
+    Then the form should be redisplayed
+    And I should see a message  "Credit Card Expired"
