@@ -5,3 +5,4 @@
    - ./gradlew clean  check
    - ./gradlew jacocoTestReport
    - ./gradlew sonarqube
+    - ./gradlew javadocs

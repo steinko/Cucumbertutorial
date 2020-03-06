@@ -1,11 +1,18 @@
 package org.steinko.cucumbertutorial;
 
+/**
+ * A Save Account
+ */
 public class SavingsAccount extends Account{
 	
-
-	public void transfer(int amount, CheckingAccount checkingAccount) {
+	/**
+     *  transfer a amount from this saving account to a checking account
+     *  @param amount the amount to transfer
+     *  @param to the checking account to transfer to
+     */
+	public void transfer(int amount, CheckingAccount to) {
 		withdraw(amount);
-		checkingAccount.deposit(amount);
+		to.deposit(amount);
 	}
 
 }
