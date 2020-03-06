@@ -1,25 +1,14 @@
 package org.steinko.cucumbertutorial;
 
-public class SavingsAccount {
-	int balance;
+public class SavingsAccount extends Account{
 	
 
-	public int balance() {
-		
-		return balance;
-	}
-
 	public void transfer(int amount, CheckingAccount checkingAccount) {
-		takeout(amount);
+		withdraw(amount);
 		checkingAccount.deposit(amount);
 	}
 
-	public void deposit(int amount) {
-		balance = balance + amount;
-		
-	}
-
-	public void takeout(int amount) {
+	public void withdraw(int amount) {
 		balance = balance - amount;
 	}
 

@@ -1,16 +1,5 @@
 package org.steinko.cucumbertutorial;
 
-public class CheckingAccount {
+public class CheckingAccount  extends Account{
 	
-	int balance;
-
-	public int balance() {
-		return balance;
-	}
-
-	
-	public void deposit(int amount) {
-		balance = balance + amount;
-	}
-
 }

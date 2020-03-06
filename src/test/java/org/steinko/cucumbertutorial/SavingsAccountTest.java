@@ -14,16 +14,16 @@ class SavingsAccountTest {
 	
 	@Test
 	void shouldhaveaBalanceon500() {
-		SavingsAccount savingsAccount  =  new SavingsAccount();
+		Account savingsAccount  =  new SavingsAccount();
 		savingsAccount.deposit(500);
 		assertEquals(savingsAccount.balance(),500);
 	}
 	
 	@Test
 	void shouldhaveaBalanceon0() {
-		SavingsAccount savingsAccount  =  new SavingsAccount();
+		Account savingsAccount  =  new SavingsAccount();
 		savingsAccount.deposit(500);
-		savingsAccount.takeout(500);
+		savingsAccount.withdraw(500);
 		assertEquals(savingsAccount.balance(),0);
 	}
 	

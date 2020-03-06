@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 import static org.junit.Assert.assertEquals;
 
 
-public class ATMSteps {
+public class InvalidCreditCardSteps {
 	private long creditCardNumber;
 	private Integer validMonth;
 	private Integer validYear;
@@ -15,35 +15,9 @@ public class ATMSteps {
 	private CreditCard creditCard;
 	private String message; 
 	
-	CheckingAccount checkingAccount = new CheckingAccount();
-	SavingsAccount savingsAccount = new SavingsAccount();
 	
-	@Given("I have deposited $10 in my Checking Account")
-	public void iHaveDeposited$10InMyCheckingAccount() {
-		checkingAccount.deposit(10);
-	   assertEquals(10, checkingAccount.balance());
-	}
-
-	@Given("I have deposited $500 in my Savings Account")
-	public void iHaveDeposited$500InMySavingsAccount() {
-		savingsAccount.deposit(500);
-		assertEquals(500, savingsAccount.balance());
-	}
-
-	@When("I transfer $500 from my Savings Account into my Checking Account")
-	public void iTransfer$500FromMySavingsAccountIntoMyCheckingAccount() {
-	   savingsAccount.transfer(500,checkingAccount);
-	}
-
-	@When("the balance of the Savings Accont should be $0")
-	public void theBalanceOfTheSavingsAccontShouldBe$0() {
-	   assertEquals(savingsAccount.balance(),0);
-	}
-
-	@When("the balance of the Checking Account should be  $501")
-	public void theBalanceOfTheCheckingAccountShouldBe$501() {
-		assertEquals(checkingAccount.balance(),510);
-	}
+	
+	
 	
 	@Given("I have chosen some items to buy")
 	public void iHaveChosenSomeItemsToBuy() {

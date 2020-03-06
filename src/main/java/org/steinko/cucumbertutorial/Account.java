@@ -2,14 +2,19 @@ package org.steinko.cucumbertutorial;
 
 
 public class Account {
-    int total = 100;
+    protected int balance = 0;
         
-	public int total() {
-		return total;
+	public int balance() {
+		return balance;
 	}
 
 	public void withdraw(int amount) {
-		total = total - amount;
+		balance = balance - amount;
+	}
+
+	public void deposit(int amount) {
+		balance = balance + amount;
+		
 	}
 
 }
