@@ -9,6 +9,7 @@ import io.cucumber.java.en.Given;
 public class WithdrawCashSteps {
 	
 	Account account = new Account();
+	CreditCard creditCard = new CreditCard();
 	
 	@Given("I have $80 in my account")
 	public void iHave$InMyAccount(Integer int1) {
@@ -30,5 +31,20 @@ public class WithdrawCashSteps {
 	@Then("$\\({int}) should be dispensed")
 	public void $ShouldBeDispensed(Integer int1) {
 	    
+	}
+	
+	@Given("my card is invalid")
+	public void myCardIsInvalid() {
+	   creditCard.invalidate();
+	}
+
+	@Then("my card should not be returned")
+	public void myCardShouldNotBeReturned() {
+	}
+
+	@Then("I should be told  that {string}")
+	public void iShouldBeToldThat(String expectedMessage) {
+		String message =  creditCard.validate(4169850001064061L, 02, 23, 074);
+		assertEquals(expectedMessage,message);
 	}
 }

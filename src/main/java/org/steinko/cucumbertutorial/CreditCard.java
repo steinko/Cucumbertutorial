@@ -5,6 +5,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class CreditCard {
+	
+	boolean valid = true;
 
 	public String validate(Long creditCardNumber, Integer validMonth, Integer validYear, Integer aCvc)  {
 		
@@ -22,6 +24,8 @@ public class CreditCard {
 		} 
 		Date today = new Date();
 		Boolean before = today.before(validTo);
+		if (!valid)
+			return "Credit Card Close. Contanct The Bank";
 		
 		if (cardNumberLength == 16 && before)
 			return "Valid";
@@ -31,5 +35,12 @@ public class CreditCard {
 		    return "Please enter a 16 digits credit car number" ;
 		return "Error";
 	}
+
+	public void invalidate() {
+		valid = false;
+		
+	}
+
+	
 
 }

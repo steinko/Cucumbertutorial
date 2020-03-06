@@ -30,5 +30,14 @@ public class CreditCardTest {
 		assertEquals(message,expected);
 	}
 	
+	@Test
+	void shouldReturnCloseMessage() {
+		CreditCard creditCard = new CreditCard();
+		creditCard.invalidate();
+		String message =  creditCard.validate(4169850001064061L, 02, 19, 074);
+		String expected = "Credit Card Close. Contanct The Bank";
+		assertEquals(expected,message);
+	}
+	
 
 }
