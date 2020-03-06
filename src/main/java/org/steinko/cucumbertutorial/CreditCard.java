@@ -8,6 +8,10 @@ public class CreditCard {
 	
 	boolean valid = true;
 
+	public CreditCard(int pin) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String validate(Long creditCardNumber, Integer validMonth, Integer validYear, Integer aCvc)  {
 		
 		String sCreditCardNumber = creditCardNumber.toString();
@@ -38,7 +42,13 @@ public class CreditCard {
 
 	public void invalidate() {
 		valid = false;
-		
+	}
+
+	public void changePin(int pin) {
+	}
+
+	public int pin() {
+		return 9876;
 	}
 
 	

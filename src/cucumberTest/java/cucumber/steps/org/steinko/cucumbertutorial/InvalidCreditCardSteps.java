@@ -26,7 +26,7 @@ public class InvalidCreditCardSteps {
 
 	@Given("I am about to enter my credit card details")
 	public void iAmAboutToEnterMyCreditCardDetails() {
-		creditCard = new CreditCard();
+		creditCard = new CreditCard(1234);
 	}
 	
 	@Given("I enter a card number {long}")
