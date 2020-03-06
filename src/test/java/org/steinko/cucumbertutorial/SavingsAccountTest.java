@@ -16,7 +16,7 @@ class SavingsAccountTest {
 	void shouldhaveaBalanceon500() {
 		Account savingsAccount  =  new SavingsAccount();
 		savingsAccount.deposit(500);
-		assertEquals(savingsAccount.balance(),500);
+		assertEquals(500,savingsAccount.balance());
 	}
 	
 	@Test
@@ -24,7 +24,7 @@ class SavingsAccountTest {
 		Account savingsAccount  =  new SavingsAccount();
 		savingsAccount.deposit(500);
 		savingsAccount.withdraw(500);
-		assertEquals(savingsAccount.balance(),0);
+		assertEquals(0,savingsAccount.balance());
 	}
 	
 	@Test
@@ -34,8 +34,8 @@ class SavingsAccountTest {
 		CheckingAccount checkingAccount = new CheckingAccount();
 		checkingAccount.deposit(10);
 		savingsAccount.transfer(500,checkingAccount);
-		assertEquals(savingsAccount.balance(),0);
-		assertEquals(checkingAccount.balance(),510);
+		assertEquals(0,savingsAccount.balance());
+		assertEquals(510,checkingAccount.balance());
 	}
 
 

@@ -8,8 +8,4 @@ public class SavingsAccount extends Account{
 		checkingAccount.deposit(amount);
 	}
 
-	public void withdraw(int amount) {
-		balance = balance - amount;
-	}
-
 }

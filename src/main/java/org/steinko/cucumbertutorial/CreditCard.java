@@ -23,7 +23,7 @@ public class CreditCard {
 		Date today = new Date();
 		Boolean before = today.before(validTo);
 		
-		if (cardNumberLength == 16 & before)
+		if (cardNumberLength == 16 && before)
 			return "Valid";
 		if (!before)
 			return "Credit Card Expired";
