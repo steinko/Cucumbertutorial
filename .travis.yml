@@ -3,3 +3,5 @@
  script:  
    - ./gradlew clean  cucumberTest
    - ./gradlew clean  check
+   - ./gradlew jacocoTestReport
+   - ./gradlew sonarqube
