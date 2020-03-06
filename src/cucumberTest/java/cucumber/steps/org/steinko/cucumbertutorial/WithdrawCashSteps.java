@@ -9,7 +9,7 @@ import io.cucumber.java.en.Given;
 public class WithdrawCashSteps {
 	
 	Account account = new Account();
-	CreditCard creditCard = new CreditCard(1234);
+	CreditCard creditCard = new CreditCard(0L, 0, 0, 0, 0);
 	
 	@Given("I have $80 in my account")
 	public void iHave$InMyAccount(Integer int1) {

@@ -7,9 +7,10 @@ import java.text.SimpleDateFormat;
 public class CreditCard {
 	
 	boolean valid = true;
+	long number;
 
-	public CreditCard(int pin) {
-		// TODO Auto-generated constructor stub
+	public CreditCard(long creditCardNumber, int validMonth, int validYear, int cvc, int pin) {
+		number = creditCardNumber;
 	}
 
 	public String validate(Long creditCardNumber, Integer validMonth, Integer validYear, Integer aCvc)  {
@@ -49,6 +50,10 @@ public class CreditCard {
 
 	public int pin() {
 		return 9876;
+	}
+	
+	public long getNumber() { 
+		return number;
 	}
 
 	

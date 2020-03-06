@@ -13,8 +13,14 @@ class BankTest {
 	@Test
 	void shouldIssuedACreditCard() {
 		Bank bank = new Bank();
-	    CreditCard creditcard = bank.issueCreditCard();			
+		Long creditCardNumber = 1234567891234567L;
+		Integer validMonth = 07;
+		Integer validYear = 23;
+		Integer cvc = 012;
+		Integer pin = 1234;
+	    CreditCard creditcard = bank.issueCreditCard(creditCardNumber, validMonth, validYear,cvc,pin);			
 		assertNotNull(creditcard);
+		
 	}
 
 }

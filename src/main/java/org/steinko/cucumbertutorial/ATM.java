@@ -16,4 +16,8 @@ public class ATM {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public Boolean corectPin() {
+		return true;
+	}
 }

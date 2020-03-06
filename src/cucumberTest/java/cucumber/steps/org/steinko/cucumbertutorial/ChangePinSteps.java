@@ -1,6 +1,8 @@
 package org.steinko.cucumbertutorial;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.Given;
@@ -12,7 +14,7 @@ public class ChangePinSteps {
 	CreditCard creditCard;
 	@Given("I have been issued a new card")
 	public void iHaveBeenIssuedANewCard() {
-		creditCard = bank.issueCreditCard();
+		creditCard = bank.issueCreditCard(null, null, null, null, null);
 	}
 
 	@Given("I insert the card, entring the correct PIN")
@@ -34,6 +36,19 @@ public class ChangePinSteps {
 	@Then("the system should remember my PIN is now \\({int})")
 	public void theSystemShouldRememberMyPINIsNow(int expectedPin) {
 	    assertEquals(expectedPin,creditCard.pin());
+	}
+	
+	@Given("I insert the card, entring the correct PIN \\({int})")
+	public void iInsertTheCardEntringTheCorrectPIN(Integer pin) {
+		atm.insertedCard(4169850001064067L);
+		atm.enterPin(pin);
+		assertTrue(atm.corectPin());
+	}
+
+
+	@Then("I should see a message {string}")
+	public void iShouldSeeAMessage(String expectedMessage) {
+	    assertEquals(expectedMessage,bank.validate(4169850001064067L, 07,23, 753));
 	}
 
 
