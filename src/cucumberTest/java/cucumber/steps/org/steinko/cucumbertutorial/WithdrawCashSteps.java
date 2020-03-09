@@ -47,4 +47,19 @@ public class WithdrawCashSteps {
 		String message =  creditCard.validate(4169850001064061L, 02, 23, 074);
 		assertEquals(expectedMessage,message);
 	}
+	
+	@When("I choose to witdraw the fixed amount of $\\({int})")
+	public void iChooseToWitdrawTheFixedAmountOf$(Integer amount) {
+		account.withdraw(amount);
+	}
+
+	@Then("I should recive $\\({int}) cash")
+	public void iShouldRecive$Cash(Integer int1) {
+	    
+	}
+
+	@Then("the balance of my accout should be $\\({int})")
+	public void theBalanceOfMyAccoutShouldBe$(int amount) {
+		 assertEquals(amount,account.balance());
+	}
 }
