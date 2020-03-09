@@ -19,6 +19,7 @@ public class Bank {
     *  @param validYear the year that the credit card expires
     *  @param cvc control number for the credit card
     *  @param pin valid pin code
+    *  @return message
     */
 
 	public CreditCard issueCreditCard(Long creditCardNumber, Integer validMonth, Integer validYear, Integer cvc, Integer pin) {
@@ -33,7 +34,7 @@ public class Bank {
     *  @param validMonth the month that the credit card expires
     *  @param validYear the year that the credit card expires
     *  @param cvc control number for the credit card
-    *  @param pin valid pin code
+    *  @return message
     */
 
 	public String validate(long creditCardNumber, int validMonth, int validYear, int cvc) {
