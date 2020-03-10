@@ -1,7 +1,7 @@
 package org.steinko.cucumbertutorial;
 
 /**
- * A Save Account
+ * A Saveings Account
  */
 public class SavingsAccount extends Account{
 	
@@ -11,7 +11,12 @@ public class SavingsAccount extends Account{
      *  @param to the checking account to transfer to
      */
 	public void transfer(int amount, CheckingAccount to) {
-		withdraw(amount);
+		try {
+			withdraw(amount);
+		} catch (AmountToHighException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		to.deposit(amount);
 	}
 

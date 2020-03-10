@@ -23,7 +23,14 @@ class SavingsAccountTest {
 	void shouldhaveaBalanceon0() {
 		Account savingsAccount  =  new SavingsAccount();
 		savingsAccount.deposit(500);
-		savingsAccount.withdraw(500);
+		
+		try {
+		   savingsAccount.withdraw(500);
+		} catch (AmountToHighException a)
+		{
+			
+		}
+		
 		assertEquals(0,savingsAccount.balance());
 	}
 	

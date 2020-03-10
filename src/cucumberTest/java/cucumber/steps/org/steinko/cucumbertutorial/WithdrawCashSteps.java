@@ -1,21 +1,21 @@
 package org.steinko.cucumbertutorial;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.Given;
-
+import io.cucumber.java.Before;
 
 public class WithdrawCashSteps {
+	ATM atm = new ATM();
+	Account account= new Account();
+	CreditCard creditCard = new CreditCard(0L, 0, 0, 0, 0);;
+	Integer amountWithDrawn= 0;
+	boolean amountRecived = true;
 	
-	Account account = new Account();
-	CreditCard creditCard = new CreditCard(0L, 0, 0, 0, 0);
 	
-	@Given("I have $80 in my account")
-	public void iHave$InMyAccount(Integer int1) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
 	
 	@Given("I have $\\({int}) in my account")
 	public void iHave$InMyAccount(int amount) {
@@ -24,13 +24,20 @@ public class WithdrawCashSteps {
 	}
 
 	@When("I request $\\({int})")
-	public void iRequest$(Integer amount) {
-		account.withdraw(amount);
+	public void iRequest$(int amount) {
+		try {
+			account.withdraw(amount);
+			amountRecived = true;
+		}  catch (AmountToHighException e) {
+			amountRecived = false;
+		}
+		
+		atm.withdrawn(new Integer(amount),amountRecived);
 	}
 
 	@Then("$\\({int}) should be dispensed")
-	public void $ShouldBeDispensed(Integer int1) {
-	    
+	public void $ShouldBeDispensed(int expectedAmount) {
+	    assertEquals(expectedAmount,atm.dispenced());
 	}
 	
 	@Given("my card is invalid")
@@ -40,6 +47,7 @@ public class WithdrawCashSteps {
 
 	@Then("my card should not be returned")
 	public void myCardShouldNotBeReturned() {
+		assertFalse(atm.returnCard());
 	}
 
 	@Then("I should be told  that {string}")
@@ -49,8 +57,15 @@ public class WithdrawCashSteps {
 	}
 	
 	@When("I choose to witdraw the fixed amount of $\\({int})")
-	public void iChooseToWitdrawTheFixedAmountOf$(Integer amount) {
-		account.withdraw(amount);
+	public void iChooseToWitdrawTheFixedAmountOf$(int amount) {
+		try {
+			   account.withdraw(amount);
+			   amountRecived = true;
+		    }
+	        catch (AmountToHighException e) {
+	        	amountRecived = false;
+	        }
+		atm.withdrawn(amount,amountRecived);
 	}
 
 	@Then("I should recive $\\({int}) cash")
@@ -61,5 +76,26 @@ public class WithdrawCashSteps {
 	@Then("the balance of my accout should be $\\({int})")
 	public void theBalanceOfMyAccoutShouldBe$(int amount) {
 		 assertEquals(amount,account.balance());
+	}
+	
+	@Then("I should recive recive $50 in chash")
+	public void iShouldReciveRecive$50InChash() {
+		 assertEquals("recive $50 in chash",atm.message());
+	   
+	}
+
+	@Then("I should recive recive $100 in chash")
+	public void iShouldReciveRecive$100InChash() {
+		 assertEquals("recive $100 in chash",atm.message());
+	}
+
+	@Then("I should recive recive $200 in chash")
+	public void iShouldReciveRecive$200InChash() {
+		assertEquals("recive $200 in chash",atm.message());
+	}
+
+	@Then("I should recive Amount to witdraw to high")
+	public void iShouldReciveAmountToWitdrawToHigh() {
+		assertEquals("Amount to witdraw to high",atm.message());
 	}
 }

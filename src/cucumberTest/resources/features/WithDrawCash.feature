@@ -14,12 +14,13 @@ Feature: Cash withdrawal
    Scenario Outline: Withdraw fixed amount
       Given I have <Balance> in my account
       When I choose to witdraw the fixed amount of <Withdrawal>
-      Then I should recive <Received> cash
+      Then I should recive <Outcom>
       And the balance of my accout should be <Remaining> 
       
         Examples:
       
-      | Balance | Withdrawal | Received | Remaining | 
-      | $(500)  | $(50)      | $(50)    | $(450)    | 
-      | $(500)  | $(100)     | $(100)   | $(400)    | 
-      | $(500)  | $(200)     | $(200)   | $(300)    |
+      | Balance | Withdrawal | Outcom                       | Remaining | 
+      | $(500)  | $(50)      | recive $50 in chash          | $(450)    | 
+      | $(500)  | $(100)     | recive $100 in chash         | $(400)    | 
+      | $(500)  | $(200)     | recive $200 in chash         | $(300)    |
+      | $(100)  | $(200)     | Amount to witdraw to high    | $(100)    |
