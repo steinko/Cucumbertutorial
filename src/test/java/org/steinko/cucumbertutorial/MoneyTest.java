@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MoneyTest {
 	
@@ -78,11 +79,31 @@ public class MoneyTest {
 	}
 	
 	@Test 
+	void shouldThrowNullPointerExeption() {
+		Money one = new Money(2);
+		Money two = null;
+		assertThrows(NullPointerException.class,()-> {one.equals(two);});
+		
+	}
+	
+	@Test 
+	void shouldThrowTypeExecption() {
+		Money one = new Money(2);
+		Account account = new Account();
+		assertThrows(ClassCastException.class,()-> {one.equals(account);});
+	}
+	
+	@Test 
 	void shouldBeE2() {
 		Money one = new Money(2);
 		assertEquals(one.toString(),"2");
 	}
 	
+	@Test
+	void shouldBeHascode1() {
+	  Money one = new Money(1);
+	  assertEquals(1,one.hashCode());
+	}
 	
 	
 
