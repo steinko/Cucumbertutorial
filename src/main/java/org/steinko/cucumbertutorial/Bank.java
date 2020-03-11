@@ -72,7 +72,7 @@ public class Bank {
     *  @return balance of the account
     */
 
-	public int balance(int acountId) {
+	public int balance(int accountId) {
 		
 		return account.balance();
 		
