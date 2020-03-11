@@ -9,18 +9,25 @@ import io.cucumber.java.en.Given;
 
 
 public class ChangePinSteps {
-	ATM atm = new ATM();
 	Bank bank = new Bank();
+	ATM atm = new ATM(bank);
 	CreditCard creditCard;
+	Long creditCardNumber = 4169850001064067L;
+	int month = 07;
+	int year = 23;
+    int cvc = 753;			
+	int issuedPin = 1234;
+	
+	
 	@Given("I have been issued a new card")
 	public void iHaveBeenIssuedANewCard() {
-		creditCard = bank.issueCreditCard(null, null, null, null, null);
+		creditCard = bank.issueCreditCard(creditCardNumber, month, year, cvc, issuedPin);
 	}
 
 	@Given("I insert the card, entring the correct PIN")
 	public void iInsertTheCardEntringTheCorrectPIN() {
-	   atm.insertedCard(4169850001064067L);
-	   atm.enterPin(1234);
+	   atm.insertedCard(creditCardNumber);
+	   atm.enterPin(issuedPin);
 	}
 
 	@When("I choose {string} from the menu")
@@ -30,12 +37,12 @@ public class ChangePinSteps {
 
 	@When("I change the PIN to \\({int})")
 	public void iChangeThePINTo(int pin) {
-	   creditCard.changePin(pin);
+	   atm.changePin(pin);
 	}
 
 	@Then("the system should remember my PIN is now \\({int})")
 	public void theSystemShouldRememberMyPINIsNow(int expectedPin) {
-	    assertEquals(expectedPin,creditCard.pin());
+	    assertEquals(expectedPin,creditCard.getPin());
 	}
 	
 	@Given("I insert the card, entring the correct PIN \\({int})")
@@ -48,7 +55,7 @@ public class ChangePinSteps {
 
 	@Then("I should see a message {string}")
 	public void iShouldSeeAMessage(String expectedMessage) {
-	    assertEquals(expectedMessage,bank.validate(4169850001064067L, 07,23, 753));
+	    assertEquals(expectedMessage,bank.validate(creditCardNumber, month,year, cvc));
 	}
 
 

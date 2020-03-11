@@ -9,6 +9,9 @@ import org.steinko.cucumbertutorial.CreditCard;
  */
 
 public class Bank {
+	boolean creditcardValid;
+	
+	SavingsAccount account = new SavingsAccount();
 	
 	private Map<Long,CreditCard> creditCards = new HashMap<Long, CreditCard>();
 	
@@ -23,7 +26,7 @@ public class Bank {
     */
 
 	public CreditCard issueCreditCard(Long creditCardNumber, Integer validMonth, Integer validYear, Integer cvc, Integer pin) {
-		  CreditCard creditCard = new CreditCard(416985000106406L, 02, 23, 074,1235);
+		  CreditCard creditCard = new CreditCard(creditCardNumber, validMonth, validYear,cvc,pin);
 		  creditCards.put(creditCard.getNumber(),creditCard);
 		  return creditCard;
 	}
@@ -49,6 +52,46 @@ public class Bank {
     */
 	
 	public void changePin(long creditCardNumber, int pin) {
+		
+	}
+	
+	/**
+	*  Deposit a amount to a account 
+    *  @param accountId identify account
+    *  @param amount amount to deposit
+    */
+
+	public void deposit(int accountId, int amount) {
+		account.deposit(amount);
+		
+	}
+	
+	/**
+	*  Return the balance of an account
+    *  @param accountId identify account
+    *  @return balance of the account
+    */
+
+	public int balance(int acountId) {
+		
+		return account.balance();
+		
+	}
+
+	public void withdraw(int i, int amount) throws AmountToHighException {
+		account.withdraw(amount);	
+	}
+	
+	
+
+	public boolean creditCardValid(Long creditCardNumber) {
+		CreditCard creditCard = creditCards.get(creditCardNumber);
+		return creditCard.valid();
+	}
+
+	public void invalidate(Long credtiCardNumber) {
+		CreditCard creditCard = creditCards.get(credtiCardNumber);
+		creditCard.invalidate();
 		
 	}
 

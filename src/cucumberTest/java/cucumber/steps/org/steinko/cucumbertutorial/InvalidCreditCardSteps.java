@@ -8,11 +8,13 @@ import static org.junit.Assert.assertEquals;
 
 
 public class InvalidCreditCardSteps {
+	private Bank bank = new Bank();
+	private Betaling betaling = new Betaling(bank);
+	
 	private long creditCardNumber;
 	private Integer validMonth;
 	private Integer validYear;
 	private Integer aCvc;
-	private CreditCard creditCard;
 	private String message; 
 	
 	
@@ -26,7 +28,8 @@ public class InvalidCreditCardSteps {
 
 	@Given("I am about to enter my credit card details")
 	public void iAmAboutToEnterMyCreditCardDetails() {
-		creditCard = new CreditCard(0L, 0, 0, 0 ,0);
+		Long creditCardNumber = 123456789123456L;
+		bank.issueCreditCard(creditCardNumber, 07, 23, 737 ,1234);
 	}
 	
 	@Given("I enter a card number {long}")
@@ -49,7 +52,7 @@ public class InvalidCreditCardSteps {
 	
 	@When("I submit the form")
 	public void iSubmitTheForm() {
-		message = creditCard.validate(creditCardNumber,validMonth,validYear,aCvc);
+		message = betaling.validate(creditCardNumber,validMonth,validYear,aCvc);
 	}
 	
 	@Then("the form should be redisplayed")

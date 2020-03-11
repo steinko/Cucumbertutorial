@@ -13,6 +13,7 @@ public class TransferFundsStep {
 	
 	@Given("I have deposited $\\({int}) in my Checking Account")
 	public void iHaveDeposited$InMyCheckingAccount(int amount) {
+		
 		checkingAccount.deposit(amount);
 		assertEquals(amount, checkingAccount.balance());
 	}

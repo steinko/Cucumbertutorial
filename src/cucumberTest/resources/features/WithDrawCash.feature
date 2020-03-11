@@ -19,8 +19,8 @@ Feature: Cash withdrawal
       
         Examples:
       
-      | Balance | Withdrawal | Outcom                       | Remaining | 
-      | $(500)  | $(50)      | recive $50 in chash          | $(450)    | 
-      | $(500)  | $(100)     | recive $100 in chash         | $(400)    | 
-      | $(500)  | $(200)     | recive $200 in chash         | $(300)    |
-      | $(100)  | $(200)     | Amount to witdraw to high    | $(100)    |
+      | Balance | Withdrawal | Outcom                      | Remaining | 
+      | $(500)  | $(50)      | recive $50 in cash          | $(450)    | 
+      | $(500)  | $(100)     | recive $100 in cash         | $(400)    | 
+      | $(500)  | $(200)     | recive $200 in cash         | $(300)    |
+      | $(100)  | $(200)     | Amount to witdraw to high   | $(100)    |

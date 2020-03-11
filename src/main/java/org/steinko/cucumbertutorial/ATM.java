@@ -5,16 +5,21 @@ package org.steinko.cucumbertutorial;
  */
 
 public class ATM {
+	
 	Integer withDrawn;
 	boolean isWithDrawn;
+	Bank bank;
 	
+	public ATM(Bank bank) {
+		this.bank = bank;
+	}
+
 	/**
 	*  insert a credit card 
     *  @param creditCardNumber  credit card number that identifies the  inserted credit card
     */
 
 	public void insertedCard(long creditCardNumber) {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -23,7 +28,6 @@ public class ATM {
     *  @param pinCode  pin code for the  inserted credit card
     */
 	public void enterPin(int pinCode) {
-		// TODO Auto-generated method stub
 		
 	}
 	
@@ -43,25 +47,51 @@ public class ATM {
 	public Boolean corectPin() {
 		return true;
 	}
-
+	
+	/**
+	* The amount dispenced from the ATM
+	*  @return the amount dispenced from the ATM
+    */
 	public int dispenced() {
 		return withDrawn;
 	}
 
+	/**
+	* Verify status of if the credit card returned from the ATM
+	*  @return true the credit card is returned, false the credit card is not returned 
+    */
 	public Boolean returnCard() {
 		return false;
 	}
 
 	public String message() {
 		if (isWithDrawn)
-		 return "recive $" + withDrawn.toString() + " in chash";
+		 return "recive $" + withDrawn.toString() + " in cash";
 		else
 		 return  "Amount to witdraw to high";
 	}
 
-	public void withdrawn(Integer amount, boolean isWithDrawn) {
-		 withDrawn = amount;
-		this.isWithDrawn = isWithDrawn;
+	
+
+	public void withdraw(int accountId, int amount)  {
+		try {
+			bank.withdraw(accountId, amount);
+			withDrawn = amount;
+			isWithDrawn = true;
+		}  catch (AmountToHighException e) {
+			isWithDrawn = false;
+		}
+		
 		
 	}
+
+	public int balance(int acountId) {	
+		return bank.balance(acountId);
+	}
+
+	public void changePin(int pin) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
