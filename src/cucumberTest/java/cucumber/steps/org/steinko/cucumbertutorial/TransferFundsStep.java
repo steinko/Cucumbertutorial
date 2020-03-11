@@ -13,30 +13,34 @@ public class TransferFundsStep {
 	
 	@Given("I have deposited $\\({int}) in my Checking Account")
 	public void iHaveDeposited$InMyCheckingAccount(int amount) {
-		
-		checkingAccount.deposit(amount);
-		assertEquals(amount, checkingAccount.balance());
+		Money money = new Money(amount);
+		checkingAccount.deposit(money);
+		assertEquals(money, checkingAccount.balance());
 	}
 
 	@Given("I have deposited $\\({int}) in my Savings Account")
 	public void iHaveDeposited$InMySavingsAccount(int amount) {
-		savingsAccount.deposit(amount);
-		assertEquals(amount, savingsAccount.balance());
+		Money money = new Money(amount);
+		savingsAccount.deposit(money);
+		assertEquals(money, savingsAccount.balance());
 	}
 
 	@When("I transfer $\\({int}) from my Savings Account into my Checking Account")
 	public void iTransfer$FromMySavingsAccountIntoMyCheckingAccount(int transferAmount) {
-		savingsAccount.transfer(transferAmount,checkingAccount);
+		Money money = new Money(transferAmount);
+		savingsAccount.transfer(money,checkingAccount);
 	}
 
 	@When("the balance of the Savings Accont should be $\\({int})")
 	public void theBalanceOfTheSavingsAccontShouldBe$(int expectedBalance) {
-		assertEquals(savingsAccount.balance(),expectedBalance);
+		Money money = new Money(expectedBalance);
+		assertEquals(savingsAccount.balance(),money);
 	}
 
 	@When("the balance of the Checking Account should be  $\\({int})")
 	public void theBalanceOfTheCheckingAccountShouldBe$(int expectedBalance) {
-		assertEquals(checkingAccount.balance(),expectedBalance);
+		Money money = new Money(expectedBalance);
+		assertEquals(checkingAccount.balance(),money);
 	}
 
 

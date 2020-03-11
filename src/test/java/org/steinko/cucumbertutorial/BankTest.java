@@ -41,30 +41,30 @@ class BankTest {
 	@Test
 	void shouldhaveAAccont1WithBalance100()  {
 		
-		bank.deposit(1,100);
-		assertEquals(bank.balance(1),100);
+		bank.deposit(1,new Money(100));
+		assertEquals(bank.balance(1),new Money(100));
 	}
 	
 	@Test
 	void shouldhaveAAccont1WithBalance200()  {
 		;
-		bank.deposit(1,200);
-		assertEquals(bank.balance(1),200);
+		bank.deposit(1,new Money(200));
+		assertEquals(bank.balance(1),new Money(200));
 	}
 	
 	@Test
 	void shouldhaveAAccont1WithBalance300() throws AmountToHighException {
 		
-		bank.deposit(1,400);
-		bank.withdraw(1, 100);
-		assertEquals(bank.balance(1),300);
+		bank.deposit(1,new Money(400));
+		bank.withdraw(1,new Money(100));
+		assertEquals(bank.balance(1),new Money(300));
 	}
 	
 	@Test
 	void shouldhaveaAmountToHighExeption()  {
 		
-		bank.deposit(1,100);
-		assertThrows(AmountToHighException.class,()-> {bank.withdraw(1, 200);});
+		bank.deposit(1,new Money(100));
+		assertThrows(AmountToHighException.class,()-> {bank.withdraw(1, new Money(200));});
 	}
 	
 	@Test

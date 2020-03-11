@@ -27,19 +27,21 @@ public class WithdrawCashSteps {
 	@Given("I have $\\({int}) in my account")
 	public void iHave$InMyAccount(int amount) {
 		bank.issueCreditCard(creditCardNumber, month, year, cvc, pin);
-		bank.deposit(accountId, amount);;
-		assertEquals(amount,bank.balance(accountId));
+		Money money = new Money(amount);
+		bank.deposit(accountId, money);
+		assertEquals(money,bank.balance(accountId));
 	}
 
 	@When("I request $\\({int})")
 	public void iRequest$(int amount) {
-	
-			atm.withdraw(accountId,amount);
+	        Money money = new Money(amount);
+			atm.withdraw(accountId,money);
 	}
 
 	@Then("$\\({int}) should be dispensed")
 	public void $ShouldBeDispensed(int expectedAmount) {
-	    assertEquals(expectedAmount,atm.dispenced());
+		Money money = new Money(expectedAmount);
+	    assertEquals(money,atm.dispenced());
 	}
 	
 	@Given("my card is invalid")
@@ -60,8 +62,8 @@ public class WithdrawCashSteps {
 	
 	@When("I choose to witdraw the fixed amount of $\\({int})")
 	public void iChooseToWitdrawTheFixedAmountOf$(int amount) {
-		
-			   atm.withdraw(accountId,amount);
+		       Money money = new Money(amount);
+			   atm.withdraw(accountId,money);
 			
 	}
 
@@ -72,7 +74,8 @@ public class WithdrawCashSteps {
 
 	@Then("the balance of my accout should be $\\({int})")
 	public void theBalanceOfMyAccoutShouldBe$(int amount) {
-		 assertEquals(amount,bank.balance(accountId));
+		Money money = new Money(amount);
+		 assertEquals( money,bank.balance(accountId));
 	}
 	
 	@Then("I should recive recive $50 in cash")

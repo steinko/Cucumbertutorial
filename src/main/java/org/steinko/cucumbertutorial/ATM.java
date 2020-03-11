@@ -6,7 +6,7 @@ package org.steinko.cucumbertutorial;
 
 public class ATM {
 	
-	Integer withDrawn;
+	Money withDrawn;
 	boolean isWithDrawn;
 	Bank bank;
 	
@@ -52,7 +52,7 @@ public class ATM {
 	* The amount dispenced from the ATM
 	*  @return the amount dispenced from the ATM
     */
-	public int dispenced() {
+	public Money dispenced() {
 		return withDrawn;
 	}
 
@@ -73,10 +73,10 @@ public class ATM {
 
 	
 
-	public void withdraw(int accountId, int amount)  {
+	public void withdraw(int accountId, Money money)  {
 		try {
-			bank.withdraw(accountId, amount);
-			withDrawn = amount;
+			bank.withdraw(accountId, money);
+			withDrawn = money;
 			isWithDrawn = true;
 		}  catch (AmountToHighException e) {
 			isWithDrawn = false;
@@ -85,7 +85,7 @@ public class ATM {
 		
 	}
 
-	public int balance(int acountId) {	
+	public Money balance(int acountId) {	
 		return bank.balance(acountId);
 	}
 
