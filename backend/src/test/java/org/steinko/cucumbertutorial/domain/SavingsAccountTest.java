@@ -1,14 +1,9 @@
-package org.steinko.cucumbertutorial.unittest;
+package org.steinko.cucumbertutorial.domain;
 
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-import org.steinko.cucumbertutorial.Account;
-import org.steinko.cucumbertutorial.AmountToHighException;
-import org.steinko.cucumbertutorial.CheckingAccount;
-import org.steinko.cucumbertutorial.Money;
-import org.steinko.cucumbertutorial.SavingsAccount;
 
 class SavingsAccountTest {
 

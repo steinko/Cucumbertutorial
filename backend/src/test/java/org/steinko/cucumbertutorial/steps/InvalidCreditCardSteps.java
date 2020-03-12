@@ -6,8 +6,8 @@ import io.cucumber.java.en.Then;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.steinko.cucumbertutorial.Bank;
-import org.steinko.cucumbertutorial.Betaling;
+import org.steinko.cucumbertutorial.domain.Bank;
+import org.steinko.cucumbertutorial.domain.Betaling;
 
 
 public class InvalidCreditCardSteps {

@@ -8,7 +8,7 @@ import io.cucumber.java.en.Given;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.steinko.cucumbertutorial.Checkout;
+import org.steinko.cucumbertutorial.domain.Checkout;
 
 public class CheckoutSteps {
 	

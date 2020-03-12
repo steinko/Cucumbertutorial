@@ -1,4 +1,4 @@
-package org.steinko.cucumbertutorial;
+package org.steinko.cucumbertutorial.domain;
 
 /**
  * An Account

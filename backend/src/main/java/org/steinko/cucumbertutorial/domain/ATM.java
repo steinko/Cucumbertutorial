@@ -1,4 +1,4 @@
-package org.steinko.cucumbertutorial;
+package org.steinko.cucumbertutorial.domain;
 
 /**
  * An ATM that manages the bank services offered to a customer

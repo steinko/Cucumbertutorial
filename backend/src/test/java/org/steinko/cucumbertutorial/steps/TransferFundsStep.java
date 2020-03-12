@@ -6,9 +6,9 @@ import io.cucumber.java.en.Then;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.steinko.cucumbertutorial.CheckingAccount;
-import org.steinko.cucumbertutorial.Money;
-import org.steinko.cucumbertutorial.SavingsAccount;
+import org.steinko.cucumbertutorial.domain.CheckingAccount;
+import org.steinko.cucumbertutorial.domain.Money;
+import org.steinko.cucumbertutorial.domain.SavingsAccount;
 
 public class TransferFundsStep {
 	

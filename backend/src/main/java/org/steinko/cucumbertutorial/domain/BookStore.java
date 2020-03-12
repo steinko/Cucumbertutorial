@@ -1,4 +1,4 @@
-package org.steinko.cucumbertutorial;
+package org.steinko.cucumbertutorial.domain;
 
 import java.util.List;
 import java.util.ArrayList;

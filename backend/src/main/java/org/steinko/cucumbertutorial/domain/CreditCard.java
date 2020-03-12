@@ -1,4 +1,4 @@
-package org.steinko.cucumbertutorial;
+package org.steinko.cucumbertutorial.domain;
 
 import java.util.Date;
 import java.text.ParseException;

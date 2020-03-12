@@ -1,10 +1,8 @@
-package org.steinko.cucumbertutorial.unittest;
+package org.steinko.cucumbertutorial.domain;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-import org.steinko.cucumbertutorial.CheckingAccount;
-import org.steinko.cucumbertutorial.Money;
 
 class CheckingAccountTest {
 

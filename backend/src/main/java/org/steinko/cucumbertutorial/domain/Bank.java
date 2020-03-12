@@ -1,8 +1,10 @@
-package org.steinko.cucumbertutorial;
+package org.steinko.cucumbertutorial.domain;
 
 import java.util.Map;
+
+import org.steinko.cucumbertutorial.domain.CreditCard;
+
 import java.util.HashMap;
-import org.steinko.cucumbertutorial.CreditCard;
 
 /**
  * A bank that manages the credit cards that have issued

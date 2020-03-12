@@ -1,8 +1,5 @@
-package org.steinko.cucumbertutorial.unittest;
+package org.steinko.cucumbertutorial.domain;
 
-import org.steinko.cucumbertutorial.Account;
-import org.steinko.cucumbertutorial.AmountToHighException;
-import org.steinko.cucumbertutorial.Money;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

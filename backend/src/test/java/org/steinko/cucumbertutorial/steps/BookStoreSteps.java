@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 
-import org.steinko.cucumbertutorial.Book;
-import org.steinko.cucumbertutorial.BookStore;
+import org.steinko.cucumbertutorial.domain.Book;
+import org.steinko.cucumbertutorial.domain.BookStore;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

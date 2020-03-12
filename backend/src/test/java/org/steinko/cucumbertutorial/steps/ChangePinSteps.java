@@ -3,9 +3,9 @@ package org.steinko.cucumbertutorial.steps;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.steinko.cucumbertutorial.ATM;
-import org.steinko.cucumbertutorial.Bank;
-import org.steinko.cucumbertutorial.CreditCard;
+import org.steinko.cucumbertutorial.domain.ATM;
+import org.steinko.cucumbertutorial.domain.Bank;
+import org.steinko.cucumbertutorial.domain.CreditCard;
 
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;

@@ -3,10 +3,10 @@ package org.steinko.cucumbertutorial.steps;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-import org.steinko.cucumbertutorial.ATM;
-import org.steinko.cucumbertutorial.Bank;
-import org.steinko.cucumbertutorial.Betaling;
-import org.steinko.cucumbertutorial.Money;
+import org.steinko.cucumbertutorial.domain.ATM;
+import org.steinko.cucumbertutorial.domain.Bank;
+import org.steinko.cucumbertutorial.domain.Betaling;
+import org.steinko.cucumbertutorial.domain.Money;
 
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;

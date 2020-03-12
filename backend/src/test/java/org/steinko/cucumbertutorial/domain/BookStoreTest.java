@@ -1,10 +1,9 @@
-package org.steinko.cucumbertutorial.unittest;
+package org.steinko.cucumbertutorial.domain;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.Test;
-import org.steinko.cucumbertutorial.Book;
-import org.steinko.cucumbertutorial.BookStore;
+
 
 import java.util.List;
 

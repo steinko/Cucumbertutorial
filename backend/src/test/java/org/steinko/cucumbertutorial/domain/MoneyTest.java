@@ -1,8 +1,6 @@
-package org.steinko.cucumbertutorial.unittest;
+package org.steinko.cucumbertutorial.domain;
 
 import org.junit.jupiter.api.Test;
-import org.steinko.cucumbertutorial.Account;
-import org.steinko.cucumbertutorial.Money;
 import org.junit.jupiter.api.Disabled;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;

@@ -1,7 +1,5 @@
-package org.steinko.cucumbertutorial.unittest;
+package org.steinko.cucumbertutorial.domain;
 
-import org.steinko.cucumbertutorial.Bank;
-import org.steinko.cucumbertutorial.CreditCard;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 

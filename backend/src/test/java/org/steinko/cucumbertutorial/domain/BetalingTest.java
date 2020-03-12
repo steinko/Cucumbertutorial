@@ -1,11 +1,9 @@
-package org.steinko.cucumbertutorial.unittest;
+package org.steinko.cucumbertutorial.domain;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
-import org.steinko.cucumbertutorial.Bank;
-import org.steinko.cucumbertutorial.Betaling;
 import org.junit.jupiter.api.BeforeEach;
 
 public class BetalingTest {

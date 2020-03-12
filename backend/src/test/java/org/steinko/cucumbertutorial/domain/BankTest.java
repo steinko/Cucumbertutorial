@@ -1,4 +1,4 @@
-package org.steinko.cucumbertutorial.unittest;
+package org.steinko.cucumbertutorial.domain;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -7,10 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.jupiter.api.Test;
-import org.steinko.cucumbertutorial.AmountToHighException;
-import org.steinko.cucumbertutorial.Bank;
-import org.steinko.cucumbertutorial.CreditCard;
-import org.steinko.cucumbertutorial.Money;
 import org.junit.jupiter.api.BeforeEach;
 
 class BankTest {

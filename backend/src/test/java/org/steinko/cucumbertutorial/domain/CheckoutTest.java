@@ -1,7 +1,7 @@
-package org.steinko.cucumbertutorial.unittest;
+package org.steinko.cucumbertutorial.domain;
 
 import org.junit.jupiter.api.Test;
-import org.steinko.cucumbertutorial.Checkout;
+
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
