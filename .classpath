@@ -6,5 +6,6 @@
 	<classpathentry kind="src" path="src/test/java"/>
 	<classpathentry kind="src" path="src/cucumberTest/java/steps"/>
 	<classpathentry kind="src" path="src/cucumberTest/java/cucumber/steps"/>
+	<classpathentry kind="src" path="src/cucumberTest/java/cucumber/transformers"/>
 	<classpathentry kind="output" path="build/classes/java/main"/>
 </classpath>

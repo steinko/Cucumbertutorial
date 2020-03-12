@@ -1,6 +1,7 @@
 package org.steinko.cucumbertutorial;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Disabled;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -103,6 +104,23 @@ public class MoneyTest {
 	void shouldBeHascode1() {
 	  Money one = new Money(1);
 	  assertEquals(1,one.hashCode());
+	}
+	
+	@Test
+	void shouldBeOne() {
+	  Money one = new Money("1");
+	  assertEquals(1,one.value);
+	}
+	
+	@Disabled
+	@Test
+	void shouldThrowConversionExeption() {
+	  assertThrows(NumberFormatException.class,()-> {new Money("One");});
+	}
+	@Disabled
+	@Test
+	void shouldThrowNullPointExeption() {
+	  assertThrows(NullPointerException.class,()-> {new Money("");});
 	}
 	
 	

@@ -2,8 +2,24 @@ package org.steinko.cucumbertutorial;
 
 public class Money {
 	Integer value;
+	
+	public Money(String amount) {
+		try { 
+			value =  Integer.parseInt(amount.trim()); 
+	    } catch(NumberFormatException e) { 
+	        
+	    } catch(NullPointerException e) {
+	        
+	    }
+		
+	}
+	
 	public Money(Integer amount) {
 		value = amount;
+	}
+	
+	public Integer getValue() {
+		return value;
 	}
 
 	public Money pluss(Money two) {
