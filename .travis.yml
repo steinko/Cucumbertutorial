@@ -1,8 +1,8 @@
  language: java
  jdk: openjdk13
  script:  
-   - ./gradlew clean  cucumberTest
-   - ./gradlew clean  check
-   - ./gradlew jacocoTestReport
-   - ./gradlew sonarqube
-   - ./gradlew javadocs
+   - ./backend/gradlew clean  cucumberTest
+   - ./backend/gradlew clean  check
+   - ./backend//gradlew jacocoTestReport
+   - ./backend//gradlew sonarqube
+   - ./backend//gradlew javadocs
