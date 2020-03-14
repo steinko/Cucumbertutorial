@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpStatus;
 
 @CrossOrigin(origins = "*")
-@RestController("personController")
+@RestController
 @RequestMapping(value = "/bank")
 public class BankController {
 	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping(value= "/deposit")
-	public void createPerson(@RequestParam("accountId") String accountId,@RequestParam("amount") String amount) {
+	public void despositAmountToAccount(@RequestParam("accountId") String accountId,@RequestParam("amount") String amount) {
 
 	}
 
