@@ -26,7 +26,7 @@ cucumber {
     glue = 'classpath:org.steinko.cucumbertutorial.steps'
     plugin =  ['progress']
     strict = 'please'
-    featurePath = '../src/cucumberTest/resources/features/'
+    featurePath = '../backend/src/cucumberTest/resources/features/'
     main = 'io.cucumber.core.cli.Main'
 }
 

@@ -79,8 +79,8 @@ jacocoTestCoverageVerification {
 }
 
 task javadocs(type: Javadoc) {
-    group 'java docs'
-    description  'generate java docs'
+  group 'java docs'
+  description  'generate java docs'
 
   source = sourceSets.main.allJava
 }

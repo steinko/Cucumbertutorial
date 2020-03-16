@@ -12,9 +12,20 @@ import org.springframework.http.HttpStatus;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value = "/bank")
+
+/**
+ * An Bank Controller 
+ */
 public class BankController {
 	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping(value= "/deposit")
+	
+	/**
+     *  deposit and amount to an account
+     *  @param accountId identifer of the account
+     *  @param amount amount
+	 *  
+     */
 	public void despositAmountToAccount(@RequestParam("accountId") String accountId,@RequestParam("amount") String amount) {
 
 	}

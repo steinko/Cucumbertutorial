@@ -3,6 +3,5 @@
  script:  
    - ./gradlew :backend:clean :backend:cucumber
    - ./gradlew :backend:clean :backend:check
-   - ./gradlew :backend:javadocs
    - ./gradlew :backend:jacocoTestReport
    - ./gradlew :backend:sonarqube
