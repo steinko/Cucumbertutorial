@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/AdoptOpenJDK 11 [11.0.5]"/>
 	<classpathentry kind="src" path="src/cucumberTest/resources/features"/>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="src" path="src/test/java"/>
@@ -10,5 +10,6 @@
 	<classpathentry kind="src" path="ApiTest/src/test/java/steps"/>
 	<classpathentry kind="src" path="backend/src/main/java"/>
 	<classpathentry kind="src" path="backend/src/test/java"/>
+	<classpathentry kind="src" path="apitest/src/test/java/steps"/>
 	<classpathentry kind="output" path="build/classes/java/main"/>
 </classpath>
