@@ -10,28 +10,28 @@ public class AccountTest {
 	@Test
 	void shouldhaveaTotalof100 () {
 		Account account = new Account();
-		account.deposit(new Money(100));
-	    assertEquals(new Money(100),account.balance());
+		account.deposit(100);
+	    assertEquals(100,account.balance());
 	}
 	
 	@Test
 	void shouldhaveaTotalof80 () {
 		Account account = new Account();
-		account.deposit(new Money(100));
+		account.deposit(100);
 		try {
-		    account.withdraw(new Money(20));
+		    account.withdraw(20);
 		} catch (AmountToHighException a)
 		{
 			
 		}
-	    assertEquals(new Money(80),account.balance());
+	    assertEquals(80,account.balance());
 	}
 	
 	@Test
 	void shouldThrowAmountToHighexeption () {
 		Account account = new Account();
-		account.deposit(new Money(100));
-		assertThrows(AmountToHighException.class,()-> {account.withdraw(new Money(110));});
+		account.deposit(100);
+		assertThrows(AmountToHighException.class,()-> {account.withdraw(110);});
 		 
 	}
 

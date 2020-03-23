@@ -10,7 +10,7 @@ public class SavingsAccount extends Account{
      *  @param amount the amount to transfer
      *  @param to the checking account to transfer to
      */
-	public void transfer(Money amount, CheckingAccount to) {
+	public void transfer(int amount, CheckingAccount to) {
 		try {
 			withdraw(amount);
 		} catch (AmountToHighException e) {

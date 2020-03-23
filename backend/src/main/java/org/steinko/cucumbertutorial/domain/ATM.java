@@ -6,7 +6,7 @@ package org.steinko.cucumbertutorial.domain;
 
 public class ATM {
 	
-	Money withDrawn;
+	int withDrawn;
 	boolean isWithDrawn;
 	Bank bank;
 	
@@ -52,7 +52,7 @@ public class ATM {
 	* The amount dispenced from the ATM
 	*  @return the amount dispenced from the ATM
     */
-	public Money dispenced() {
+	public int dispenced() {
 		return withDrawn;
 	}
 
@@ -66,14 +66,14 @@ public class ATM {
 
 	public String message() {
 		if (isWithDrawn)
-		 return "recive $" + withDrawn.toString() + " in cash";
+		 return "recive $" + Integer.toString(withDrawn) + " in cash";
 		else
 		 return  "Amount to witdraw to high";
 	}
 
 	
 
-	public void withdraw(int accountId, Money money)  {
+	public void withdraw(int accountId, int money)  {
 		try {
 			bank.withdraw(accountId, money);
 			withDrawn = money;
@@ -85,7 +85,7 @@ public class ATM {
 		
 	}
 
-	public Money balance(int acountId) {	
+	public int balance(int acountId) {	
 		return bank.balance(acountId);
 	}
 

@@ -63,7 +63,7 @@ public class Bank {
     *  @param amount amount to deposit
     */
 
-	public void deposit(int accountId, Money amount) {
+	public void deposit(int accountId, int amount) {
 		account.deposit(amount);
 		
 	}
@@ -74,13 +74,13 @@ public class Bank {
     *  @return balance of the account
     */
 
-	public Money balance(int accountId) {
+	public int balance(int accountId) {
 		
 		return account.balance();
 		
 	}
 
-	public void withdraw(int i, Money money) throws AmountToHighException {
+	public void withdraw(int i, int money) throws AmountToHighException {
 		account.withdraw(money);	
 	}
 	

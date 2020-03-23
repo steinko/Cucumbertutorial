@@ -6,13 +6,12 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import org.steinko.cucumbertutorial.domain.ATM;
 import org.steinko.cucumbertutorial.domain.Bank;
 import org.steinko.cucumbertutorial.domain.Betaling;
-import org.steinko.cucumbertutorial.domain.Money;
 
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.Before;
-import io.cucumber.java.ParameterType;
+
 
 public class WithdrawCashSteps {
 	Bank bank = new Bank();
@@ -28,27 +27,24 @@ public class WithdrawCashSteps {
 	boolean amountRecived = true;
 	int accountId = 1;
 	
-	@ParameterType(".*")
-	public Money money(String amount) { 
-		return new Money(amount);
-	}
 	
 	
 	
-	@Given("I have $\\({money}) in my account")
-	public void iHave$InMyAccount( Money amount) {
+	
+	@Given("I have $\\({int}) in my account")
+	public void iHave$InMyAccount( int amount) {
 		bank.issueCreditCard(creditCardNumber, month, year, cvc, pin);
 		bank.deposit(accountId, amount);
 		assertEquals(amount,bank.balance(accountId));
 	}
 
-	@When("I request $\\({money})")
-	public void iRequest$(Money amount) {
+	@When("I request $\\({int})")
+	public void iRequest$(int amount) {
 	        atm.withdraw(accountId,amount);
 	}
 
-	@Then("$\\({money}) should be dispensed")
-	public void $ShouldBeDispensed(Money expectedAmount) {
+	@Then("$\\({int}) should be dispensed")
+	public void $ShouldBeDispensed(int expectedAmount) {
 	    assertEquals(expectedAmount,atm.dispenced());
 	}
 	
@@ -68,19 +64,19 @@ public class WithdrawCashSteps {
 		assertEquals(expectedMessage,message);
 	}
 	
-	@When("I choose to witdraw the fixed amount of $\\({money})")
-	public void iChooseToWitdrawTheFixedAmountOf$(Money amount) {
+	@When("I choose to witdraw the fixed amount of $\\({int})")
+	public void iChooseToWitdrawTheFixedAmountOf$(int amount) {
 			   atm.withdraw(accountId,amount);
 			
 	}
 
-	@Then("I should recive $\\({money}) cash")
-	public void iShouldRecive$Cash(Money int1) {
+	@Then("I should recive $\\({int}) cash")
+	public void iShouldRecive$Cash(int int1) {
 	    
 	}
 
-	@Then("the balance of my accout should be $\\({money})")
-	public void theBalanceOfMyAccoutShouldBe$(Money amount) {
+	@Then("the balance of my accout should be $\\({int})")
+	public void theBalanceOfMyAccoutShouldBe$(int amount) {
 		 assertEquals( amount,bank.balance(accountId));
 	}
 	

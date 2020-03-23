@@ -1,13 +1,9 @@
- plugins {  
-    id 'java'
-    id "se.thinkcode.cucumber-runner" version "0.0.8"
+ plugins { 
     id 'jacoco'
     id "org.sonarqube" version "2.7.1"
     id 'org.springframework.boot' version '2.2.5.RELEASE'
 }
 
-group = 'org.steinko'
-version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 sonarqube {
@@ -21,36 +17,22 @@ sonarqube {
     }
 }
 
-repositories {
-    mavenCentral()
-}
-
-
-cucumber {
-    glue = 'classpath:org.steinko.cucumbertutorial.steps'
-    plugin =  ['progress']
-    strict = 'please'
-    featurePath = 'src/cucumberTest/resources/features/'
-    main = 'io.cucumber.core.cli.Main'
-}
-
-
 
 test {
-    useJUnitPlatform()
+    systemProperty 'junit.jupiter.extensions.autodetection.enabled', true
 }
 
-dependencies {
-    testImplementation 'io.cucumber:cucumber-java:5.4.0'
-    testImplementation 'io.cucumber:cucumber-junit:5.4.0'
-
+dependencies {   
     implementation 'org.springframework.boot:spring-boot-starter-web:2.2.5.RELEASE'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.2.5.RELEASE'
 	testImplementation 'io.rest-assured:spring-mock-mvc:4.2.0'	
+    testImplementation'com.epam.reportportal:agent-java-junit5:4.0.3'
+    implementation 'com.epam.reportportal:logger-java-log4j:4.0.1'
+    implementation 'org.apache.logging.log4j:log4j-core:2.13.1'
+    implementation 'org.apache.logging.log4j:log4j-api:2.13.1'   
 }
 
 jacocoTestReport {
-
     reports {
         xml.enabled true
         html.enabled false
@@ -84,3 +66,11 @@ task javadocs(type: Javadoc) {
 
   source = sourceSets.main.allJava
 }
+
+configurations {
+    backend
+    }
+
+artifacts {
+        backend bootJar
+    }

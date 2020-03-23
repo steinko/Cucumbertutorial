@@ -1,24 +1,10 @@
 plugins {
-    id 'java'
     id "se.thinkcode.cucumber-runner" version "0.0.8"
-    id 'jacoco'
-    id "org.sonarqube" version "2.7.1"
 }
 
-repositories {
-    // Use jcenter for resolving dependencies.
-    // You can declare any Maven/Ivy/file repository here.
-    jcenter()
-}
-
-sonarqube {
-    properties {
-		property "sonar.host.url","https://sonarcloud.io"
-        property "sonar.sourceEncoding", "UTF-8"
-		property "sonar.login", "43983a01ea79d77e7ce4931e989733cdcfb6ef47"
-		property "sonar.projectKey", "ApiCucumbertutorial"
-		property "sonar.organization" , "steinko-github"
-        property "sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/test/jacocoTestReport.xml"
+jar {
+    manifest {
+        attributes 'Main-Class': 'org.steinko.cucumbertutorial.ApiTest'
     }
 }
 
@@ -26,23 +12,14 @@ cucumber {
     glue = 'classpath:org.steinko.cucumbertutorial.steps'
     plugin =  ['progress']
     strict = 'please'
-    featurePath = '../backend/src/cucumberTest/resources/features/'
+    featurePath = 'acceptancetest/src/test/resources/features/'
     main = 'io.cucumber.core.cli.Main'
 }
 
 dependencies {
-
+    implementation project(':backend')
     testImplementation 'io.cucumber:cucumber-java:5.4.0'
     testImplementation 'io.cucumber:cucumber-junit:5.4.0'
-
+    testImplementation 'com.epam.reportportal:agent-java-cucumber4:5.0.0-BETA-9'
     testImplementation 'io.rest-assured:rest-assured:4.2.0'
-    
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.0")
-}
-
-
-test {
-    // Use junit platform for unit tests
-    useJUnitPlatform()
 }

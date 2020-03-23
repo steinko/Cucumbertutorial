@@ -3,19 +3,12 @@ package org.steinko.cucumbertutorial.steps;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-
-
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.Before;
-import io.cucumber.java.ParameterType;
 
 public class WithdrawCashSteps {
-	
-	
-	
-	
 	
 	
 	@Given("I have $\\({int}) in my account")

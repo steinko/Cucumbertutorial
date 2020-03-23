@@ -15,8 +15,8 @@ class CheckingAccountTest {
 	@Test
 	void shouldHaveAbalnceOf10() {
 		CheckingAccount checkingAccount  =  new CheckingAccount(); 
-		checkingAccount.deposit(new Money(10));
-		assertEquals(new Money(10),checkingAccount.balance());
+		checkingAccount.deposit(10);
+		assertEquals(10,checkingAccount.balance());
 	}
 
 

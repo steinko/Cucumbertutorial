@@ -23,30 +23,30 @@ public class ATMTest {
 	
 	@Test
 	void shouldhaveBalance200() {
-		bank.deposit(1,new Money(300));
-		atm.withdraw(1,new Money(100));
-		assertEquals(new Money(200),atm.balance(1));
+		bank.deposit(1,300);
+		atm.withdraw(1,100);
+		assertEquals(200,atm.balance(1));
 	}
 	
 	@Test
 	void shouldhaveBalance100() {
-		bank.deposit(1, new Money(300));
-		atm.withdraw(1,new Money(200));
-		assertEquals(new Money(100),atm.balance(1));
+		bank.deposit(1, 300);
+		atm.withdraw(1,200);
+		assertEquals(100,atm.balance(1));
 	}
 
 	
 	@Test
 	void shouldReciveMessageRecive$100inCash() {
-		bank.deposit(1,new Money(300));
-		atm.withdraw(1,new Money(100));
+		bank.deposit(1,300);
+		atm.withdraw(1,100);
 		assertEquals("recive $100 in cash",atm.message() );
 	}
 	
 	@Test
 	void shouldReciveMessageAmounttoWitdrawToHigh() {
-		bank.deposit(1,new Money(300));
-		atm.withdraw(1,new Money(400));
+		bank.deposit(1,300);
+		atm.withdraw(1,400);
 		assertEquals("Amount to witdraw to high",atm.message() );
 	}
 

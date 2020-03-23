@@ -5,14 +5,14 @@ package org.steinko.cucumbertutorial.domain;
  */
 public class Account {
 	
-    protected Money  balance = new Money(0);
+    protected int  balance = 0;
     
     
     /**
      *  balance of the account
      *  @return the balance
      */
-	public Money balance() {
+	public int balance() {
 		return balance;
 	}
 
@@ -22,9 +22,9 @@ public class Account {
      *  @param amount the amount to withdraw
 	 *  @throws AmountToHighException Amount Higher than balance
      */
-	public void withdraw(Money amount) throws AmountToHighException {
-		if (amount.greaterThan(balance)) throw new  AmountToHighException();
-		else balance = balance.minus(amount);
+	public void withdraw(int amount) throws AmountToHighException {
+		if (amount > balance) throw new  AmountToHighException();
+		else balance = balance-amount;
 	}
 	
 	
@@ -32,8 +32,8 @@ public class Account {
      *  deposit to the account
      *  @param money the amount to deposit
      */
-	public void deposit(Money money) {
-		balance = balance.pluss(money);
+	public void deposit(int money) {
+		balance = balance + money;
 		
 	}
 
