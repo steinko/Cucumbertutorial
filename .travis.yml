@@ -1,6 +1,7 @@
  language: java
  jdk: openjdk13
  script:  
-   - ./gradlew :backend:clean :backend:check
+   - ./gradlew :backend:clean 
+   - ./gradlew :backend:check --info
    - ./gradlew :backend:jacocoTestReport
    - ./gradlew :backend:sonarqube
